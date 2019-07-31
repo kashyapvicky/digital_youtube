@@ -1,0 +1,32 @@
+$(document).ready(function(){
+	$("#right_menu_line_logout").click(function(){
+		$.ajax({
+		type:'POST',
+		url:'inc/logout.php',
+		dataType:'json',
+		beforeSend:function(){
+		document.getElementById("right_menu_line_logout").style.opacity="0.4";
+		},
+		success:function(rep){
+		if(rep == "done"){
+			document.location.href="index.php";
+		}
+		}
+		});
+	});
+	$("#right_menu_line_logoutlist").click(function(){
+		$.ajax({
+		type:'POST',
+		url:'inc/logout.php',
+		dataType:'json',
+		beforeSend:function(){
+		document.getElementById("right_menu_line_logoutlist").style.opacity="0.4";
+		},
+		success:function(rep){
+		if(rep == "done"){
+			document.location.href="index.php";
+		}
+		}
+		});
+	});
+});
